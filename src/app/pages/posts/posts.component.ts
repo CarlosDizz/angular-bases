@@ -22,4 +22,8 @@ export class PostsComponent implements OnInit {
       });
   }
 
+  listenClick(id: number){
+    console.log("pater:" + id);
+  }
+
 }

@@ -1,16 +1,5 @@
 <h2>Posts</h2>
 <ul class="list-group">
-  <li *ngFor="let message of messages" class="list-group-item">
-    <div class="card">
-      <div class="card-header">
-        #{{message.id}}#
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{message.title}}</h5>
-        <p class="card-text">{{message.body}}</p>
-
-      </div>
-    </div>
-  </li>
-
+  <app-post *ngFor="let message of messages"
+            [message] = "message" (clickPosts)="listenClick($event)" ></app-post>
 </ul>

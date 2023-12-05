@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../services/data.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  messages: any[] = [];
+
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit(): void {
+    console.log("init");
+    this.dataService.getPosts()
+      .subscribe(posts  => {
+       this.messages = posts;
+      });
   }
 
 }

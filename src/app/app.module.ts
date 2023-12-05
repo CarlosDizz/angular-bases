@@ -9,6 +9,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import { Error404Component } from './pages/error404/error404.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {PagesModule} from "./pages/pages.module";
+import {DataService} from "./services/data.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {PagesModule} from "./pages/pages.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    HttpClientModule
 
   ],
   providers: [],
